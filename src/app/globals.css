@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --card-border: #e2e8f0;
+  --muted: #64748b;
+  --muted-bg: #f1f5f9;
+  --accent: #2563eb;
+  --accent-emerald: #059669;
+  --accent-amber: #d97706;
+  --ring: #2563eb;
+}
+
+.dark {
+  --background: #090a0f;
+  --foreground: #f8fafc;
+  --card: #12141e;
+  --card-foreground: #f8fafc;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --muted: #94a3b8;
+  --muted-bg: #1a1d2b;
+  --accent: #38bdf8;
+  --accent-emerald: #10b981;
+  --accent-amber: #f59e0b;
+  --ring: #38bdf8;
+}
+
+@theme {
+  --color-bg: var(--background);
+  --color-text: var(--foreground);
+  --color-surface: var(--card);
+  --color-surface-text: var(--card-foreground);
+  --color-border-subtle: var(--card-border);
+  --color-muted-text: var(--muted);
+  --color-muted-surface: var(--muted-bg);
+  --color-primary-accent: var(--accent);
+  --color-emerald-accent: var(--accent-emerald);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.25s ease, color 0.25s ease;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}
